@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Penn! 🌹</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Floating roses background -->
+        <div class="rose rose1">🌹</div>
+        <div class="rose rose2">🌹</div>
+        <div class="rose rose3">🌹</div>
+        <div class="rose rose4">🌹</div>
+        <div class="rose rose5">🌹</div>
+        <div class="rose rose6">🌹</div>
+        
+        <!-- Main content -->
+        <div class="card">
+            <div class="heart-header">
+                <span class="heart">❤️</span>
+                <h1>Happy Valentine's Day</h1>
+                <span class="heart">❤️</span>
+            </div>
+            
+            <div class="photo-frame">
+                <img src="tacoji.png" alt="tacoji" class="photo">
+            </div>
+            
+            <div class="options-section" id="optionsSection">
+                <p class="options-text">Do you agree? 💕</p>
+                <div class="button-container">
+                    <button class="btn btn-yes" onclick="showCelebration()">Me! 😊</button>
+                    <button class="btn btn-no" id="noBtn" onclick="makeButtonDisappear()">Not Me</button>
+                </div>
+            </div>
+            
+            <div class="content">
+                <h2 class="name">✨ Penn ✨</h2>
+                <p class="message">You're an amazing friend!</p>
+                <p class="message">Wishing you a day filled with</p>
+                <p class="message">love, laughter, and happiness</p>
+            </div>
+            
+            <div class="footer-roses">
+                🌹 &nbsp; 🌹 &nbsp; 🌹
+            </div>
+        </div>
+        
+        <!-- Floating hearts -->
+        <div class="floating-heart heart1">💕</div>
+        <div class="floating-heart heart2">💕</div>
+        <div class="floating-heart heart3">💕</div>
+        <div class="floating-heart heart4">💕</div>
+        
+        <!-- Celebration Container -->
+        <div class="celebration" id="celebration"></div>
+    </div>
+    
+    <script>
+        function makeButtonDisappear() {
+            const noBtn = document.getElementById('noBtn');
+            noBtn.classList.add('disappear');
+            setTimeout(() => {
+                noBtn.style.display = 'none';
+            }, 500);
+        }
+        
+        function showCelebration() {
+            const celebration = document.getElementById('celebration');
+            celebration.classList.add('active');
+            
+            // Create lots of roses and hearts
+            for (let i = 0; i < 60; i++) {
+                const emoji = Math.random() > 0.5 ? '🌹' : '💕';
+                const element = document.createElement('div');
+                element.className = 'celebration-item';
+                element.textContent = emoji;
+                element.style.left = Math.random() * 100 + '%';
+                element.style.top = Math.random() * 100 + '%';
+                element.style.fontSize = (Math.random() * 40 + 20) + 'px';
+                element.style.animationDelay = Math.random() * 0.5 + 's';
+                celebration.appendChild(element);
+            }
+            
+            // Disable the yes button
+            event.target.disabled = true;
+            event.target.style.opacity = '0.5';
+        }
+    </script>

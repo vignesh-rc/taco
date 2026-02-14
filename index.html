@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Penn 💕</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Floating roses background -->
+        <div class="rose rose1">🌹</div>
+        <div class="rose rose2">🌹</div>
+        <div class="rose rose3">🌹</div>
+        <div class="rose rose4">🌹</div>
+        <div class="rose rose5">🌹</div>
+        <div class="rose rose6">🌹</div>
+        
+        <!-- Intro Card -->
+        <div class="card intro-card">
+            <div class="intro-question">
+                <p class="question-text">❓ Who's AMERICAN MANGLORE BADDIEE????❓</p>
+                <p class="answer-text">✨ YOU ARE! ✨</p>
+            </div>
+            
+            <div class="button-container">
+                <button class="btn btn-yes" onclick="goToCard()">Me! 😊</button>
+                <button class="btn btn-no" id="noBtn" onclick="makeButtonDisappear()">Not Me</button>
+            </div>
+        </div>
+        
+        <!-- Floating hearts -->
+        <div class="floating-heart heart1">💕</div>
+        <div class="floating-heart heart2">💕</div>
+        <div class="floating-heart heart3">💕</div>
+        <div class="floating-heart heart4">💕</div>
+    </div>
+    
+    <script>
+        function goToCard() {
+            window.location.href = 'tacoji.html';
+        }
+        
+        function makeButtonDisappear() {
+            const noBtn = document.getElementById('noBtn');
+            noBtn.classList.add('disappear');
+            setTimeout(() => {
+                noBtn.style.display = 'none';
+            }, 500);
+        }
+    </script>
+</body>
+</html>
